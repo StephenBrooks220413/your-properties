@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <%- include('layouts/header') -%>
+  <body>
+    <!-- navbar -->
+    <%- include('layouts/navBar') -%>
+    <!-- navbar -->
+
+    <div>
+        <div class="container mt-5">
+          <div>
+
+            <h1 class="display-4"><%= listing.address %></h1>
+            <h1>Available on <%= listing.dateAvailable %></h1>
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/listings">Listings</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"> <%= listing.propertyName %> </li>
+                </ol>
+            </nav>
+
+            <div class="row mt-5 mb-5">
+              <div class="col-md p-2">
+                <a href="#!" download="#!">
+                  <img src="<%= listing.image %>" 
+                    class="img-fluid shadow-3-strong rounded" 
+                    alt="listing" 
+                  /> 
+                </a> <br>
+                <picture>Downlad details</picture>
+                <br> <br>
+                <p class="lead">
+                    <strong>Description</strong>: <%= listing.description %>
+
+                </p>
+                <p>
+                  Listed By Mike, <a href="mailto:<%= listing.email %>">Message Seller</a>
+                </p>
+              </div>
+              
+            </div>
+
+          </div>
+        </div>
+    </div>
+
+    <%- include('layouts/footer') -%>
+    <%- include('layouts/scripts') -%>
+    
+  </body>
+</html>

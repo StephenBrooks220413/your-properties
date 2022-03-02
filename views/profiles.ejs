@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('layouts/header') -%>
+  <body>
+
+  <!-- Navbar -->
+  <%- include('layouts/navBar') -%>
+  <!-- Navbar -->
+
+  <div class="profile-Bg">
+    <div class="container p-5 mb-5">
+        <h1 class="display-4 mb-3 text-primary">Our Property Members</h1>
+  
+        <div class="row">
+            <% for(let i = 0; i < users.length; i++){ %>
+                <div class="col-md text-center">
+                    <div style="opacity: 0.9;">
+                        <div class="card hover-zoom p-3 m-2">
+                            <a href="/profile/<%= users[i]._id %>">
+                                <h3><%= users[i].username %></h3>
+                            </a>
+                            <p>
+                                Created By <%= users[i].username %>, On
+                                <%= users[i].joinedDate.toDateString() %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+  </div>
+
+  <%- include('layouts/scripts') -%>
+  <%- include('layouts/footer') -%>
+</body>
+</html>

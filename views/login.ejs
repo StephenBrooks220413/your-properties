@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <%- include('layouts/header') -%>
+  <body>
+    <!-- navbar -->
+    <%- include('layouts/navBar') -%>
+    <!-- navbar -->
+
+    <div class="container p-5">
+        <h1 class="display-3">Account Login</h1>
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/auth/register">Register</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Login</li>
+          </ol>
+        </nav>
+
+        <div class="row">
+          <div class="col p-4">
+            <form action="/users/login" method="post" enctype="multipart/form-data">
+              <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password">
+              </div>
+              <button type="submit" class="btn btn-primary form-control">Submit</button>
+            </form>
+          </div>
+          
+        </div>
+    </div>
+
+    <%- include('layouts/footer') -%>
+    <%- include('layouts/scripts') -%>
+    
+  </body>
+</html>
